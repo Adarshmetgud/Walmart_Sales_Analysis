@@ -60,19 +60,18 @@ This project is an end-to-end data analysis solution designed to extract critica
      - Sales performance by time, city, and payment method.
      - Analyzing peak sales periods and customer buying patterns.
        
-    ```sql
     SELECT
-    branch,
-    CASE 
-        WHEN HOUR(TIME(time)) < 12 THEN 'Morning'
-        WHEN HOUR(TIME(time)) BETWEEN 12 AND 17 THEN 'Afternoon'
-        ELSE 'Evening'
-    END AS shift,
-    COUNT(*) AS num_invoices
+        branch,
+        CASE 
+            WHEN HOUR(TIME(time)) < 12 THEN 'Morning'
+            WHEN HOUR(TIME(time)) BETWEEN 12 AND 17 THEN 'Afternoon'
+            ELSE 'Evening'
+        END AS shift,
+        COUNT(*) AS num_invoices
     FROM walmart
     GROUP BY branch, shift
-    ORDER BY branch, num_invoices DESC;  
-    ```
+    ORDER BY branch, num_invoices DESC; 
+      
 
    - Profit margin analysis by branch and category.
    - **Documentation**: Keep clear notes of each query's objective, approach, and results.
