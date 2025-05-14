@@ -59,7 +59,8 @@ This project is an end-to-end data analysis solution designed to extract critica
      - Identifying best-selling product categories.
      - Sales performance by time, city, and payment method.
      - Analyzing peak sales periods and customer buying patterns.
-    ```sql```
+       
+    ```sql
     SELECT
     branch,
     CASE 
@@ -68,12 +69,11 @@ This project is an end-to-end data analysis solution designed to extract critica
         ELSE 'Evening'
     END AS shift,
     COUNT(*) AS num_invoices
-FROM walmart
-GROUP BY branch, shift
-ORDER BY branch, num_invoices DESC;  
-```
+    FROM walmart
+    GROUP BY branch, shift
+    ORDER BY branch, num_invoices DESC;  
+    ```
 
-     
    - Profit margin analysis by branch and category.
    - **Documentation**: Keep clear notes of each query's objective, approach, and results.
 
